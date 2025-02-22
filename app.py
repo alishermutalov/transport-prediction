@@ -2,13 +2,10 @@ import streamlit as st
 from fastai.vision.all import *
 import plotly.express as px
 import pathlib
-import platform
 
-# Platformaga qarab yo'l formatlash
-temp = pathlib.Path
-if platform.system() == 'Linux':
-    pathlib.WindowsPath = pathlib.PosixPath
-
+# temp = pathlib.PosixPath
+# pathlib.PosixPath = pathlib.WindowsPath #For Windows
+pathlib.WindowsPath = pathlib.PosixPath #For Linux
 
 st.title('Transport classification model')
 file = st.file_uploader('Upload image')

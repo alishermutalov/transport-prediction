@@ -4,8 +4,10 @@ import plotly.express as px
 import pathlib
 import platform
 
-plt = platform.system()
-if plt=='Linux': pathlib.WindowsPath = pathlib.PosixPath 
+# Platformaga qarab yo'l formatlash
+temp = pathlib.Path
+if platform.system() == 'Linux':
+    pathlib.WindowsPath = pathlib.PosixPath
 
 
 st.title('Transport classification model')
